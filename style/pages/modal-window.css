@@ -1,0 +1,76 @@
+.signin-modal-window-back,
+.feedback-modal-window-back {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.185);
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center; 
+    align-items: center;
+    z-index: 99;
+    padding: 30px 0;
+}
+.active {
+    display: flex;
+}
+.signin-modal-window,
+.feedback-modal-window {
+    background: #fff;
+    border-radius: 10px;
+    width: 40%;
+    height: 50vh;
+    max-width: 100%;
+    align-items: center;
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(1);
+}
+.header-part-modal-window {
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 35px;
+    width: 100%;
+}
+.header-part-modal-window h3 {
+    width: 95%;
+    text-align: center;
+    font-size: 34px;
+}
+.btn-close-modal-window {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+.btn-close-modal-window i::before {
+    font-size: 32px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+    border-radius: 50%;
+}
+.btn-close-modal-window:hover {
+    opacity: 0.7;
+}
+.btn-close-modal-window:active i::before {
+    box-shadow: none;
+}
+.signin-modal-window form,
+.feedback-modal-window form {
+    text-align: center;
+    margin: 10px 0;
+}
+.signin-modal-window form input,
+.feedback-modal-window form input {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 22px;
+    padding: 10px;
+    outline: none;
+}
+.signin-modal-window form button,
+.feedback-modal-window form button {
+    width: 84%;
+}

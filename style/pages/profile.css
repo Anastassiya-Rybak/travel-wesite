@@ -1,0 +1,101 @@
+.user-profile {
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+.author-blogs {
+    width: 56%;
+} 
+.user-block {
+    width: 42%;
+}
+.header__author-blogs {
+    justify-content: space-between;
+    align-items: center;
+    font-size: 46px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.blogs-img {
+    overflow: hidden;
+    width: 100%;
+    height: 40vh;
+}
+.blogs-img img {
+    max-width: 100%;
+    object-fit: cover;
+}
+.blogs-title {
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 20px 0;
+}
+.blogs-title h2{
+    font-size: 34px;
+    font-weight: 600px;
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    letter-spacing: 2px;
+}
+.dropdown-edit-dots {
+    justify-content:flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 100;
+    color: #000;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.dropdown-edit-dots-content {
+    display: none;
+}
+.blogs-data {
+    margin: 30px 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.blogs-data i {
+    margin-right: 10px;
+    color: black;
+}
+.blogs-data a {
+    color: #000;
+}
+.user-block-wrapper {
+    align-items: center;
+    width: 100%;
+}
+.user-block button {
+    width: 70%;
+    margin-bottom: 15px;
+}
+.user-block button a {
+    color: #000000;
+}
+.avatar {
+    width: 30%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avatar img {
+    width: 100%;
+    object-fit: cover;
+}
+.user-name {
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    letter-spacing: 2px;
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+.user-email {
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.view-info {
+    margin-bottom: 20px;
+    
+}

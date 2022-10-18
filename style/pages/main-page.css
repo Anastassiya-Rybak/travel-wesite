@@ -1,0 +1,214 @@
+/* 1 block start */
+.company-presentation {
+    background-image: url(../../images/index-page/background1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+}
+.choose-distanation {
+    background-image: url(../../images/index-page/background2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+}
+.slick-arrow {
+    z-index: 2;
+    height: 100%;
+}
+.slick-prev {
+    position: absolute;
+    left: 5px;
+}
+.slick-next {
+    position: absolute;
+    right: 35px;
+}
+.slick-prev:before,
+.slick-next:before {
+    font-size: 50px;
+    opacity: 0.3;
+}
+.slick-prev:before:hover,
+.slick-next:before:hover {
+    opacity: 0.5;
+}
+.text-slide1 {
+    width: 70%;
+    margin: 30vh auto;
+}
+.text-slide1 p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
+.title-main {
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    letter-spacing: 4px;
+    font-size: 62px;
+    font-weight: 800;
+}
+.title-main-2 {
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    font-weight: 600;
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin-top: 20vh;
+}
+/* 1 block end */
+
+/* 2 block start */
+.popular-destination {
+    height: 100vh;
+    width: 100%;
+}
+.text-popular-destination {
+    margin: 40px auto;
+}
+.text-popular-destination h2 {
+    color: #CAFB10;
+    font-size: 42px;
+    font-weight: 600;
+    text-shadow: 1px 2px 2px #6a6a6a;
+}
+.slider2 {
+    width: 100%;
+    justify-content: space-between
+}
+.slider2__item {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+.slider2 div img {
+    width: 100%;
+}
+.slider2 span {
+    position: absolute;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    bottom: 15%;
+    box-shadow: 1px 2px 2px #6a6a6a;
+    background-color: #fff;
+    color: black;
+}
+.slider2>.slick-next {
+    right: 50px;
+}
+.slider2>.slick-prev {
+    left: 25px;
+}
+/* 2 block end */
+
+/* 3 block start */
+.choose-distanation-full {
+    background-image: url(../../images/index-page/background3.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90%;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+.choose-distanation-full__text__title {
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    font-weight: 600;
+    font-size: 42px;
+    letter-spacing: 4px;
+    padding-top: 30vh;
+}
+.choose-distanation-full__text p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 30vh;
+}
+/* 3 block end */
+/* 4 block start */
+.call-us-back {
+    background-image: url(../../images/index-page/collage4.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+.call-us {
+    align-items: center;
+    text-align: left;
+    color: #fff;
+    padding: 10vh 0;
+}
+.call-us__part1__title {
+    color: #CAFB10;
+    text-shadow: 1px 2px 2px #6a6a6a;
+    letter-spacing: 4px;
+    font-size: 62px;
+    font-weight: 800;
+}
+.call-us__part1 p {
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+/* 4 block end */
+/* 5 block start */
+.email-block {
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 60px;
+}
+.text__email-block h4{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.text__email-block{
+    width: 50%;
+}
+.form-for-email {
+    width: 50%;
+    align-items: center;
+}
+.form-for-email input{
+    margin-right: 10px;
+    padding: 10px;
+    width: 60%;
+    box-shadow: 1px 2px 2px #6a6a6a;
+}
+/* 5 block end */
+/* 6 block start */
+footer {
+    justify-content: space-between;
+    padding: 40px 0;
+}
+.contact__footer span {
+    margin-top: 15px;
+}
+footer a {
+    color: black;
+}
+.contact__footer span a:hover {
+    color: #CAFB10;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+.nav__footer {
+    width: 50%;
+    justify-content: space-between;
+}
+.nav__footer h4{
+    font-size: 24px;
+    font-weight: 600;    
+}
+.nav__footer li{
+    margin-top: 15px;
+}
+
+/* 6 block end */
