@@ -12,14 +12,14 @@ for (let i = 0; i < btns.length; i++) {
   });
 }
 
-window.onclick = function (event) {
-  if (event.target.hasAttribute('data-modal')) {
-    let modals = document.querySelectorAll('*[data-modal]');
-    for (let i = 0; i < modals.length; i++) {
-      modals[i].style.display = "none";
-    }
-  }
-}
+// window.onclick = function (event) {
+//   if (event.target.hasAttribute('data-modal')) {
+//     let modals = document.querySelectorAll('*[data-modal]');
+//     for (let i = 0; i < modals.length; i++) {
+//       modals[i].style.display = "none";
+//     }
+//   }
+// }
 
 
 // const modalBtns = document.querySelectorAll('._btn-modal-open');
