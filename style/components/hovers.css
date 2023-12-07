@@ -1,10 +1,16 @@
 .info-div .number a:hover,
 .nav li a:hover,
 footer a:hover {
-    color: #CAFB10;
+    color: #b3e00f;
     transition: 0.3s;
     text-decoration: underline;
 }
+
+.burger__nav li:hover {
+    color: #b3e00f;
+    border-bottom: 1px solid #b3e00f;
+}
+
 .btn:hover {
     cursor: pointer;
     background-color: #c8fb107a;
