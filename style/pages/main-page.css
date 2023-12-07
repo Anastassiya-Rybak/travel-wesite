@@ -45,17 +45,17 @@
 }
 .title-main {
     color: #CAFB10;
-    text-shadow: 1px 2px 2px #6a6a6a;
-    letter-spacing: 4px;
+    text-shadow: 1px 0.05em 0.05em #6a6a6a;
+    letter-spacing: 0.08em;
     font-size: 62px;
     font-weight: 800;
 }
 .title-main-2 {
     color: #CAFB10;
-    text-shadow: 1px 2px 2px #6a6a6a;
+    text-shadow: 1px 0.07em 0.07em #6a6a6a;
     font-weight: 600;
     font-size: 42px;
-    letter-spacing: 4px;
+    letter-spacing: 0.1em;
     margin-top: 20vh;
 }
 /* 1 block end */

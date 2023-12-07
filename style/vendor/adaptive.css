@@ -15,6 +15,10 @@
 
     .conaction-btn-link {
         width: 10%;
+    }
+
+    .text-slide1 p {
+        font-size: 16px;
     }    
     
 }
@@ -31,7 +35,20 @@
     .conaction-btn-link a i::before,
     .conaction-btn-link i {
         font-size: 14px;
-    }    
+    }
+
+    .text-slide1 p {
+        font-size: 10px;
+    }
+
+    .title-main {
+        font-size: 42px;
+    }
+
+    .title-main-2 {
+        font-size: 32px;
+    }
+    
 }
 
 @media (max-width: 880px) {
@@ -94,5 +111,9 @@
         width: 80%;
         margin: 0 auto;
     }
+
+    .text-slide1 {
+        width: 60%;
+    }    
 
 }
