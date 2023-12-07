@@ -62,7 +62,7 @@
 
 /* 2 block start */
 .popular-destination {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
 }
 .text-popular-destination {
@@ -109,12 +109,12 @@
 
 /* 3 block start */
 .choose-distanation-full {
-    background-image: url(../../images/index-page/background3.webp);
+    background-image: url(../../images/index-page/background4.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90%;
+    height: 95%;
     text-align: center;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 .choose-distanation-full__text__title {
     color: #CAFB10;

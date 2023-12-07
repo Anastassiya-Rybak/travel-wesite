@@ -7,7 +7,7 @@ footer a:hover {
 }
 .btn:hover {
     cursor: pointer;
-    background-color: #c8fb101e;
+    background-color: #c8fb107a;
 }
 .btn:active {
     background-color: #c8fb101e;
@@ -16,4 +16,11 @@ footer a:hover {
 .dropdown-edit-dots:hover {
     opacity: 1;
     transition: 0.3s;
+}
+
+.search-part:hover,
+._btn-modal-open:hover,
+.save:hover,
+.logo-wrapper:hover {
+    transform: scale(1.07);
 }
