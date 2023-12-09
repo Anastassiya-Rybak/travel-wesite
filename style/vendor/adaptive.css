@@ -162,7 +162,18 @@
         font-size: 25px;
     }
     
+    .call-us-back {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        background-position: center;
+    }
 
+    .call-us__part1__title {
+        font-size: 46px;
+    }
+    .call-us__part1 p {
+        font-weight: 400;
+    }
 }
 
 @media (max-width: 480px) {
