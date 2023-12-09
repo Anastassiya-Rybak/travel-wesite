@@ -24,16 +24,15 @@
     background: #fff;
     border-radius: 10px;
     width: 40%;
-    height: 50vh;
     max-width: 100%;
     align-items: center;
     transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
     transform: scale(1);
+    padding: 2vw;
 }
 .header-part-modal-window {
     justify-content: space-between;
     align-items: center;
-    padding: 30px 35px;
     width: 100%;
 }
 .header-part-modal-window h3 {

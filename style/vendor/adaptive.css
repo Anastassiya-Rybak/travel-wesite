@@ -92,7 +92,31 @@
     .nav__footer li{
         font-size: 10px;
     }
+
+    .header-part-modal-window h3 {
+        font-size: 26px;
+    }
+
+    .btn-close-modal-window i::before {
+        font-size: 24px;
+    }
     
+    .signin-modal-window form input,
+    .feedback-modal-window form input {
+        margin: 5px auto;
+        font-size: 14px;
+        padding: 7px;
+    }
+
+    .signin-modal-window form button,
+    .feedback-modal-window form button {
+        padding: 10px;
+    }
+
+    .signin-modal-window span,
+    .feedback-modal-window span {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 680px) {
@@ -151,6 +175,24 @@
 
     .nav__footer {
         width: 55%;
+    }
+
+    .header-part-modal-window h3,
+    .btn-close-modal-window i::before {
+        font-size: 20px;
+    }
+    
+    .signin-modal-window form input,
+    .feedback-modal-window form input,
+    .signin-modal-window form button,
+    .feedback-modal-window form button {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .signin-modal-window span,
+    .feedback-modal-window span {
+        font-size: 6px;
     }
     
 }
@@ -243,6 +285,11 @@
     .nav__footer {
         width: 100%;
     }
+
+    .signin-modal-window,
+    .feedback-modal-window {
+        width: 60%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -267,5 +314,27 @@
 
     .text-popular-destination h2 {
         font-size: 20px;
+    }
+
+    .signin-modal-window,
+    .feedback-modal-window {
+        width: 80%;
+    }
+
+    .header-part-modal-window h3,
+    .btn-close-modal-window i::before {
+        font-size: 24px;
+    }
+    
+    .signin-modal-window form input,
+    .feedback-modal-window form input,
+    .signin-modal-window form button,
+    .feedback-modal-window form button {
+        font-size: 16px;
+    }
+
+    .signin-modal-window span,
+    .feedback-modal-window span {
+        font-size: 14px;
     }
 }
