@@ -51,6 +51,13 @@
     
     .text-popular-destination h2 {
         font-size: 30px;
+    }
+
+    .choose-distanation-full__text p {
+        font-size: 16px;
+        padding-bottom: 20vh;
+        width: 70%;
+        margin: 0 auto;
     }    
 }
 
@@ -82,6 +89,11 @@
     .slider2 span {
         font-size: 14px;
     }
+
+    .choose-distanation-full__text__title {
+        font-size: 30px;
+        padding-top: 20vh;
+    }    
     
 }
 
@@ -166,6 +178,11 @@
 
     .slider3 {
         display: flex;
+    }
+
+    .slider3>.slick-next,
+    .slider3>.slick-prev {
+        display: none !important;
     }
 
     .text-popular-destination h2 {

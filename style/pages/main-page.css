@@ -79,6 +79,11 @@
     width: 100%;
     justify-content: space-between
 }
+
+.slider3 {
+    display: none;
+}
+
 .slider2__item,
 .slider3__item {
     padding: 10px;
@@ -131,10 +136,6 @@
     left: 25px;
 }
 
-.slider3>.slick-next,
-.slider3>.slick-prev {
-    display: none;
-}
 /* 2 block end */
 
 /* 3 block start */
@@ -151,7 +152,7 @@
     text-shadow: 1px 2px 2px #6a6a6a;
     font-weight: 600;
     font-size: 42px;
-    letter-spacing: 4px;
+    letter-spacing: 0.1em;
     padding-top: 30vh;
 }
 .choose-distanation-full__text p {
