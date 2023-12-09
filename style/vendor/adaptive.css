@@ -49,9 +49,12 @@
         font-size: 32px;
     }
     
+    .text-popular-destination h2 {
+        font-size: 30px;
+    }    
 }
 
-@media (max-width: 880px) {
+@media (max-width: 680px) {
     .logo-wrapper {
         width: 10%;
     }
@@ -76,11 +79,15 @@
         font-size: 14px;
     }
 
+    .slider2 span {
+        font-size: 14px;
+    }
+    
 }
 
 @media (max-width: 560px) {
     .logo-wrapper {
-        width: 15%;
+        width: 25%;
     }
 
     .nav {
@@ -112,8 +119,56 @@
         margin: 0 auto;
     }
 
+    .conaction-btn-link {
+        width: 15%;
+    }
+
     .text-slide1 {
         width: 60%;
+    }
+
+    .text-popular-destination {
+        margin: 20px auto;
     }    
 
+    h2 {
+        font-size: 24px;
+    }
+
+    .slider2>.slick-next {
+        right: 25px;
+    }
+    .slider2>.slick-prev {
+        left: 15px;
+    }    
+
+    .slider2>.slick-next::before {
+        font-size: 25px;
+    }
+
+    .slider2>.slick-prev::before {
+        font-size: 25px;
+    }
+    
+
+}
+
+@media (max-width: 480px) {
+    .company-presentation,
+    .choose-distanation {
+        height: 85vh;
+        background-position: center;
+    }    
+
+    .slider2 {
+        display: none;
+    }
+
+    .slider3 {
+        display: flex;
+    }
+
+    .text-popular-destination h2 {
+        font-size: 20px;
+    }
 }
