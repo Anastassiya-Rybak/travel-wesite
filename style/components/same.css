@@ -13,14 +13,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
     max-width: 1440px;
     margin: 0 auto;
 }
-.black-back {
-    background-color: #121212;
-    color: #fff;
-}
-.white-back {
-    background-color: #fff;
-    color: black;
-}
 .btn {
     font-family: 'Montserrat', sans-serif;
     background-color: #CAFB10;

@@ -15,12 +15,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    div {
-        background-color: aqua;
-        padding: 100px;
-        p {
-            @include k-border-debug;
-            background-color: $dandy;
-        }
+    p {
+        color: aliceblue;
     }
 </style>

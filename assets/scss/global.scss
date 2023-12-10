@@ -4,18 +4,17 @@
     padding: 0;
 }
 
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
 .wrapper {
     width: 80%;
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.k-border {
-    @include k-border;
-}
-  
-.k-border-debug {
-    @include k-border-debug;
-
-    background-color: $dandy;
-}
