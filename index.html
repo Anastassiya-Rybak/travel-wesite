@@ -39,7 +39,26 @@
                     <h3 class="burger" data-modal-open="burgernav">МЕНЮ</h3>
                     <ul class="burger__nav d-flex-c" data-modal="burgernav">
                         <li><a href="">Главная</a></li>
-                        <li><a href="">О направлениях</a></li>
+                        <li>
+                            <a href="" data-anchor="destination">О направлениях</a>
+                            <ul class="destination-popup__list d-flex-r" data-anchor-content="destination">
+                                <li><a class="burger-popup">Lorem</a></li>
+                                <li><a class="burger-popup">Lorqfem</a></li>
+                                <li><a class="burger-popup">Lem</a></li>
+                                <li><a class="burger-popup">Lordfvem</a></li>
+                                <li><a class="burger-popup">Lorem</a></li>
+                                <li><a class="burger-popup">Lorerem</a></li>
+                                <li><a class="burger-popup">Lorem</a></li>
+                                <li><a class="burger-popup">Lorfffem</a></li>
+                                <li><a class="burger-popup">Loream</a></li>
+                                <li><a class="burger-popup">Lorbutem</a></li>
+                                <li><a class="burger-popup">Lorgaaem</a></li>
+                                <li><a class="burger-popup">Loreddm</a></li>
+                                <li><a class="burger-popup">Longrem</a></li>
+                                <li><a class="burger-popup">Loremsa</a></li>
+                                <li><a class="burger-popup">Lorem</a></li>
+                            </ul>                
+                        </li>
                         <li><a href="blogs.html">Блоги</a></li>
                         <li><a href="">Контакты</a></li>
                         <li><a href="">Новости</a></li>
@@ -47,7 +66,7 @@
                 </div>
                 <ul class="nav d-flex-r">
                     <li><a href="">Главная</a></li>
-                    <li><a href="">О направлениях</a></li>
+                    <li><a href="" data-anchor="destinationnav">О направлениях</a></li>
                     <li><a href="blogs.html">Блоги</a></li>
                     <li><a href="">Контакты</a></li>
                     <li><a href="">Новости</a></li>
@@ -59,8 +78,27 @@
                     <button class="_btn-modal-open btn-modal-open_profile" data-modal-open="usersignin"><i class="fa-solid fa-user"></i></button>
                     <a class="save" href=""><i class="fa-regular fa-heart"></i></a>
                 </div>
-            </div>    
+            </div> 
         </section>
+        <section class="destination-popup" data-anchor-content="destinationnav">
+            <ul class="destination-popup__list d-flex-r">
+                <li><a>Lorem</a></li>
+                <li><a>Lorqfem</a></li>
+                <li><a>Lem</a></li>
+                <li><a>Lordfvem</a></li>
+                <li><a>Lorem</a></li>
+                <li><a>Lorerem</a></li>
+                <li><a>Lorem</a></li>
+                <li><a>Lorfffem</a></li>
+                <li><a>Loream</a></li>
+                <li><a>Lorbutem</a></li>
+                <li><a>Lorgaaem</a></li>
+                <li><a>Loreddm</a></li>
+                <li><a>Longrem</a></li>
+                <li><a>Loremsa</a></li>
+                <li><a>Lorem</a></li>
+            </ul>
+        </section>    
     </header>
     <section>
         <div class="signin-modal-window-back modal-window" data-modal="usersignin">
@@ -265,6 +303,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/popup.js"></script>
     <script src="js/modal.js"></script>
 </body>
 </html>

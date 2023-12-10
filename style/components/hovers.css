@@ -1,9 +1,11 @@
 .info-div .number a:hover,
 .nav li a:hover,
-footer a:hover {
+footer a:hover,
+.destination-popup__list li a:hover {
     color: #b3e00f;
     transition: 0.3s;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .burger__nav li:hover {

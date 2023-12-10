@@ -1,6 +1,10 @@
 @media (max-width: 1440px) {
     .wrapper {
         width: 90%;
+    }
+
+    .destination-popup {
+        bottom: -40%;
     }    
 }
 
@@ -15,6 +19,15 @@
 
     .conaction-btn-link {
         width: 10%;
+    }
+
+    .destination-popup {
+        bottom: -80%;
+        width: 60%;
+    }
+
+    .destination-popup__list li a {
+        font-size: 10px;
     }
 
     .text-slide1 p {
@@ -52,6 +65,19 @@
     .conaction-btn-link a i::before,
     .conaction-btn-link i {
         font-size: 14px;
+    }
+
+    .destination-popup {
+        bottom: -40%;
+        padding: 10px;
+    }
+
+    .destination-popup__list {
+        gap: 5px;
+    }    
+
+    .destination-popup__list li a {
+        font-size: 6px;
     }
 
     .text-slide1 p {
@@ -208,6 +234,17 @@
 
     .burger-wrap {
         display: block;
+    }
+
+    .destination-popup__list {
+        display: none;
+        padding-left: 10%;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .destination-popup__list li .burger-popup:hover {
+        text-decoration: none;
     }
 
     .first-part-header {
