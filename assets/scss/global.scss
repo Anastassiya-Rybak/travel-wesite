@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.k-border {
+    @include k-border;
+}
+  
+.k-border-debug {
+    @include k-border-debug;
+
+    background-color: $dandy;
+}
