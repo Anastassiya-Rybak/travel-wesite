@@ -1,34 +1,4 @@
-@media (max-width: 1440px) {
-    .wrapper {
-        width: 90%;
-    }
-
-    .destination-popup {
-        bottom: -40%;
-    }    
-}
-
 @media (max-width: 1100px) {
-    .second-part-header {
-        padding: 20px 0;
-    }
-    
-    .nav {
-        width: 60%;
-    }
-
-    .conaction-btn-link {
-        width: 10%;
-    }
-
-    .destination-popup {
-        bottom: -80%;
-        width: 60%;
-    }
-
-    .destination-popup__list li a {
-        font-size: 10px;
-    }
 
     .text-slide1 p {
         font-size: 16px;
@@ -54,32 +24,6 @@
 }
 
 @media (max-width: 880px) {
-    .logo-wrapper {
-        width: 20%;
-    }
-
-    .nav a {
-        font-size: 10px;
-    }
-
-    .conaction-btn-link a i::before,
-    .conaction-btn-link i {
-        font-size: 14px;
-    }
-
-    .destination-popup {
-        bottom: -40%;
-        padding: 10px;
-    }
-
-    .destination-popup__list {
-        gap: 5px;
-    }    
-
-    .destination-popup__list li a {
-        font-size: 6px;
-    }
-
     .text-slide1 p {
         font-size: 10px;
     }
@@ -146,30 +90,6 @@
 }
 
 @media (max-width: 680px) {
-    .logo-wrapper {
-        width: 10%;
-    }
-
-    .nav {
-        width: 70%;
-    }
-
-    .info-div .number a {
-        font-size: 10px;
-    }
-
-    .info-div .number i {
-        font-size: 10px;
-    }
-
-    .work-hours {
-        font-size: 8px;
-    }
-
-    .social-div a i {
-        font-size: 14px;
-    }
-
     .slider2 span {
         font-size: 14px;
     }
@@ -224,54 +144,6 @@
 }
 
 @media (max-width: 560px) {
-    .logo-wrapper {
-        width: 25%;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .burger-wrap {
-        display: block;
-    }
-
-    .destination-popup__list {
-        display: none;
-        padding-left: 10%;
-        gap: 0;
-        flex-direction: column;
-    }
-
-    .destination-popup__list li .burger-popup:hover {
-        text-decoration: none;
-    }
-
-    .first-part-header {
-        flex-wrap: wrap;
-        row-gap: 10px;
-        justify-content: space-between;
-    }
-
-    .info-div .number a,
-    .info-div .number i {
-        font-size: 8px;
-    }
-
-    .work-hours {
-        font-size: 8px;
-        letter-spacing: 0.1em;
-    }
-
-    .social-div {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .conaction-btn-link {
-        width: 15%;
-    }
-
     .text-slide1 {
         width: 60%;
     }

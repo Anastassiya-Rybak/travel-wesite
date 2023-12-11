@@ -155,6 +155,7 @@ header {
 
 .destination-popup__list li a {
     text-transform: uppercase;
+    color: #050505;
     font-size: 12px;
     letter-spacing: 0.1em;
 }

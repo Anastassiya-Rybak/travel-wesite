@@ -1,0 +1,19 @@
+// variables
+
+$accent: #b3e00f;
+
+// mixins
+
+@mixin link-hover {
+  color: $accent;
+  transition: 0.3s;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@mixin media($width) {
+  @media (max-width: $width) {
+    @content
+  }
+}
+
