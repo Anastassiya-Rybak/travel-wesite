@@ -52,12 +52,24 @@ export default {
     text-align: center;
 }
 
+.slider1__choose-distanation,
+.slider1__company-presentation {
+    @include media(480px) {
+        height: 85vh;
+        background-position: center;
+    }
+}
+
 .slide1__content {
     width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2vh;
+
+    @include media(560px) {
+        width: 60%;
+    }
 
     h1 {
         color: $accent;
@@ -66,6 +78,9 @@ export default {
         letter-spacing: 0.08em;
         font-size: 68px;
         font-weight: 800;
+        @include media(880px) {
+            font-size: 46px;
+        }
     }
 
     h2 {
@@ -75,12 +90,22 @@ export default {
         font-weight: 600;
         font-size: 42px;
         letter-spacing: 0.1em;
+        @include media(880px) {
+            font-size: 36px;
+        }
     }
 
     p {
         color: #fff;
         font-size: 20px;
         font-weight: 400;
+
+        @include media(1100px) {
+            font-size: 16px;
+        }
+        @include media(880px) {
+            font-size: 10px;
+        }
 
         a {
             display: block;

@@ -29,73 +29,6 @@ footer a:hover,
 }
 
 
-/* <section class="wrapper">
-<div class="popular-destination d-flex-c">
-    <div class="text-popular-destination">
-        <h2>Популярные напрaвления</h2>
-    </div>
-    <div class="slider2 d-flex-r">
-        <div class="slider2__item">
-            <img src="images/index-page/slide1.webp" alt="">
-            <span>Норвегия</span>
-        </div>
-        <div class="slider2__item">
-            <img src="images/index-page/slide2.webp" alt="">
-            <span>Португалия</span>
-        </div>
-        <div class="slider2__item">
-            <img src="images/index-page/slide3.webp" alt="">
-            <span>Канада</span>
-        </div>
-        <div class="slider2__item">
-            <img src="images/index-page/slide4.webp" alt="">
-            <span>Швеция</span>
-        </div>
-        <div class="slider2__item">
-            <img src="images/index-page/slide5.webp" alt="">
-            <span>Франция</span>
-        </div>
-        <div class="slider2__item">
-            <img src="images/index-page/slide6.webp" alt="">
-            <span>США</span>
-        </div>
-    </div>
-    <div class="slider3 d-flex-r">
-        <div class="slider3__item">
-            <div class="slider3__big">
-                <img src="images/index-page/slide1.webp" alt="">
-                <span>Норвегия</span>
-            </div>
-            <div class="slider3__small-wrapp d-flex-c">
-                <div class="slider3__small">
-                    <img src="images/index-page/slide2.webp" alt="">
-                    <span>Португалия</span>
-                </div>
-                <div class="slider3__small">
-                    <img src="images/index-page/slide3.webp" alt="">
-                    <span>Канада</span>
-                </div>    
-            </div>
-        </div>
-        <div class="slider3__item">
-            <div class="slider3__big">
-                <img src="images/index-page/slide4.webp" alt="">
-                <span>Швеция</span>
-            </div>
-            <div class="slider3__small-wrapp d-flex-c">
-                <div class="slider3__small">
-                    <img src="images/index-page/slide5.webp" alt="">
-                    <span>Франция</span>
-                </div>
-                <div class="slider3__small">
-                    <img src="images/index-page/slide6.webp" alt="">
-                    <span>США</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
 <section>
 <div class="choose-distanation-full">
     <div class="choose-distanation-full__text">
@@ -118,4 +51,4 @@ footer a:hover,
         </button>
     </div>
 </div>
-</section> */
+</section>
