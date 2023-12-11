@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section>
         <header class="header">
             <section class="header__black-back-wrapper">
                 <div class="header__black-back wrapper">
@@ -27,7 +27,7 @@
                     <div class="header__logo"><a href=""><img src="/images/logo.webp" alt="Lime Trip"></a></div>
                     <div class="header__burger-wrapper">
                         <h3 class="header__burger" @click.prevent="openPopup('burger')">МЕНЮ</h3>
-                        <BurgerContent :open="open.burger" />
+                        <BurgerContent v-show="open.burger" />
                     </div>
                     <ul class="header__nav">
                         <nuxt-link to="">Главная</nuxt-link>
@@ -49,11 +49,64 @@
                     </div>
                 </div>
             </section>
-            <TheDistanations :open="open.destinations" />
+            <TheDistanations v-show="open.destinations" />
         </header>
         <ModalWindow v-show="open.modal" type="usersProfile" @close-modal="open.modal = false" />
         <slot />
-    </div>
+        <div class="email-form-wrapper">
+            <div class="email-form wrapper">
+                <div class="email-form__text">
+                    <h4>Мы постоянно мониторим лучшие акции для своих клиентов!</h4>
+                    <p>Если хотите получать актуальную информацию о акциях - просто подпишитесь на наши рассылки!</p>
+                </div>
+                <form action="" method="POST">
+                    <input type="email" name="" id="mainemail" placeholder="Введите свой Email">
+                    <button type="submit" class="btn">ПОДПИСАТЬСЯ</button>
+                </form>
+            </div>
+            <hr>
+        </div>
+        <footer class="footer wrapper">
+            <div class="footer__contact">
+                <div><img src="/images/logo.webp" alt="LimeTrip"></div>
+                <span>
+                    <img src="/images/icons/call-svgrepo-com.svg" alt="">
+                    <a href="tel:+70007477777">Тел:+70007477777</a>
+                </span>
+                <span>
+                    <img src="/images/icons/mail.svg" alt="">
+                    <a href="email:lime_trip@gmail.com">Email:lime_trip@gmail.com</a>
+                </span>
+            </div>
+            <div class="footer__nav">
+                <div>
+                    <h4>LIME TRIP</h4>
+                    <ul>
+                        <li><a href="">О нас</a></li>
+                        <li><a href="">Контакты</a></li>
+                        <li><a href="">Блоги</a></li>
+                        <li><a href="">Политика сайта</a></li>
+                    </ul>    
+                </div>
+                <div>
+                    <h4>ИНФОРМАЦИЯ</h4>
+                    <ul>
+                        <li><a href="">О странах</a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Акции</a></li>
+                    </ul>    
+                </div>
+                <div>
+                    <h4>ЛИЧНОЕ</h4>
+                    <ul>
+                        <li><a href="">Аккаунт</a></li>
+                        <li><a href="">Избранное</a></li>
+                    </ul>    
+                </div>
+        
+            </div>
+        </footer>
+    </section>
 </template>
 
 <script>
@@ -302,6 +355,94 @@ export default {
 
             &:hover {
                 transform: scale(1.07);
+            }
+        }
+    }
+
+    .email-form-wrapper {
+        background-color: #fff;
+        padding: 5vh 0 0;
+
+        .email-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 60px;
+
+            &__text {
+                width: 50%;
+
+                h4 {
+                    font-size: 30px;
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 10px;
+                }
+            }
+
+            form {
+                width: 50%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                input {
+                    margin-right: 10px;
+                    padding: 10px;
+                    width: 60%;
+                    box-shadow: 1px 2px 2px #6a6a6a;
+                }
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+
+        a {
+            color: #050505;
+        }
+
+        &__contact { 
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            span {
+                display: flex;
+                column-gap: 10px;
+                align-items: center;
+
+                img {
+                    width: 25px;
+                }
+                
+                a {
+                    padding-top: 5px;
+
+                   &:hover {
+                        color: $accent;
+                        text-decoration: underline;
+                        transition: 0.3s;
+                    } 
+                }
+            }
+        }
+
+        &__nav {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+
+            h4 {
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            li {
+                margin-top: 15px;
             }
         }
     }
