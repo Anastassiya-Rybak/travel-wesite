@@ -1,21 +1,16 @@
 <template>
-    <div>
-        <p>ffffff</p>
-    </div>
+    <main>
+        <BunnerSlider />
+    </main>
 </template>
 
 <script>
+import BunnerSlider from '~/components/sliders/BunnerSlider.vue'
 export default {
-    setup () {
-        
-
-        return {}
-    }
+    components: {BunnerSlider},
 }
 </script>
 
 <style lang="scss" scoped>
-    p {
-        color: aliceblue;
-    }
+
 </style>

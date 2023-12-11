@@ -1,50 +1,50 @@
 <template>
-    <section class="destination-popup" :class="{open: open}">
+    <section class="destination-popup">
         <ul class="destination-popup__list">
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorqfem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorqfem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lordfvem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lordfvem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorerem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorerem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorfffem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorfffem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Loream</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Loream</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorbutem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorbutem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorgaaem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorgaaem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Loreddm</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Loreddm</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Longrem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Longrem</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Loremsa</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Loremsa</nuxtLink>
             </li>
             <li>
-                <nuxtLink to="/distanation.html" class="burger-popup">Lorem</nuxtLink>
+                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
             </li>
         </ul>
     </section>
@@ -52,20 +52,13 @@
 
 <script>
     export default {
-        props: {
-            open: {
-                type: Boolean,
-                required: true,
-                default: false
-            }
-        }
     }
 </script>
 
 <style lang="scss">
     .destination-popup {
         transition: all 0.3s;
-        display: none;
+        display: block;
         width: 45%;
         margin: 0 auto;
         position: absolute;

@@ -3,7 +3,7 @@
         <li><nuxtLink to="/">Главная</nuxtLink></li>
         <li>
             <nuxtLink to="" @click.prevent="openPopup">О направлениях</nuxtLink>
-            <TheDistanations :open="destinationsOpen" />
+            <TheDistanations v-show="destinationsOpen" />
         </li>
         <li><nuxtLink to="">Блоги</nuxtLink></li>
         <li><nuxtLink to="">Контакты</nuxtLink></li>
@@ -15,13 +15,6 @@
 import TheDistanations from './TheDistanations.vue';
 export default {
     components: { TheDistanations },
-    props: {
-        open: {
-            type: Boolean,
-            required: true,
-            default: false
-        }
-    },
     data() {
         return {
             destinationsOpen: false,
@@ -29,7 +22,6 @@ export default {
     },
     methods: {
         openPopup(){
-            console.log(this.destinationsOpen);
             this.destinationsOpen === true ? this.destinationsOpen = false : this.destinationsOpen = true;
         }
 
@@ -42,7 +34,6 @@ export default {
     display: flex;
     flex-direction: column;
     position: absolute;
-    display: none;
     padding: 10px;
     z-index: 3;
     background-color: #fff;
