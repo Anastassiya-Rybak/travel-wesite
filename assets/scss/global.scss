@@ -12,9 +12,37 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
+.open {
+    display: flex !important;
+}
+
 .wrapper {
     width: 80%;
     max-width: 1440px;
     margin: 0 auto;
+
+    @include media(1440px) {
+        width: 90%;
+    }
 }
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #CAFB10;
+    box-shadow: 1px 2px 5px #CAFB10;
+    border: none;
+    color: #000000;
+    text-shadow: 1px 1px 1px #0c0c0c;
+    text-shadow: -1px -1px -1px #0c0c0c;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    padding: 20px;
+    cursor: pointer;
+}
+
 

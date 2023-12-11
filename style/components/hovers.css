@@ -8,11 +8,6 @@ footer a:hover,
     cursor: pointer;
 }
 
-.burger__nav li:hover {
-    color: #b3e00f;
-    border-bottom: 1px solid #b3e00f;
-}
-
 .btn:hover {
     cursor: pointer;
     background-color: #c8fb107a;
