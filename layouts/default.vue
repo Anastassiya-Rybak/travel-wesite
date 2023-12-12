@@ -369,8 +369,17 @@ export default {
             align-items: center;
             padding-bottom: 60px;
 
+            @include media(680px) {
+                flex-direction: column;
+                gap: 1.5vh;
+            }
+
             &__text {
                 width: 50%;
+
+                @include media(680px) {
+                    width: 100%;
+                }
 
                 h4 {
                     font-size: 30px;
@@ -386,11 +395,38 @@ export default {
                 justify-content: space-around;
                 align-items: center;
 
+                @include media(1100px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                @include media(680px) {
+                    width: 100%;
+                }
+
                 input {
                     margin-right: 10px;
                     padding: 10px;
                     width: 60%;
                     box-shadow: 1px 2px 2px #6a6a6a;
+
+                    @include media(1100px) {
+                        margin-right: 0;
+                    }
+                }
+
+                button {
+                    @include media(1100px) {
+                        margin-top: 20px;
+                        width: 67%;
+                    }
+                }
+
+                input,
+                button {
+                    @include media(680px) {
+                        width: 95%;
+                    }
                 }
             }
         }
@@ -400,6 +436,12 @@ export default {
         display: flex;
         justify-content: space-between;
         padding: 40px 0;
+
+        @include media(560px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5vh;
+        }
 
         a {
             color: #050505;
@@ -421,6 +463,9 @@ export default {
                 
                 a {
                     padding-top: 5px;
+                    @include media(880px) {
+                        font-size: 14px;
+                    }
 
                    &:hover {
                         color: $accent;
@@ -436,13 +481,36 @@ export default {
             display: flex;
             justify-content: space-between;
 
+            @include media(1100px) {
+                width: 70%;
+            }
+            @include media(880px) {
+                width: 60%;
+            }
+            @include media(680px) {
+                width: 55%;
+            }
+
             h4 {
                 font-size: 24px;
                 font-weight: 600;
+                @include media(880px) {
+                    font-size: 14px;
+                }
             }
 
             li {
                 margin-top: 15px;
+                @include media(880px) {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        &__contact,
+        &__nav {
+            @include media(560px) {
+                width: 100%;
             }
         }
     }

@@ -18,8 +18,8 @@
                 <input type="number" name="tell" id="user-number"  placeholder="Укажите номер для связи">
                 <button class="btn">Свяжитесь со мной</button>
             </form>
-            <span v-show="type === 'usersProfile'">Вы забыли пароль? <a href="">Восстановить</a></span>
-            <span v-show="type === 'usersProfile'">Нет аккаунта? <a href="">Зарегистрироваться</a></span>
+            <span v-show="type === 'usersProfile'">Вы забыли пароль? <nuxtLink to="">Восстановить</nuxtLink></span>
+            <span v-show="type === 'usersProfile'">Нет аккаунта? <nuxtLink to="">Зарегистрироваться</nuxtLink></span>
         </div>
     </section>
 </template>
@@ -66,6 +66,13 @@ export default {
         transform: scale(1);
         padding: 2vw;
 
+        @include media(560px) {
+            width: 60%;
+        }
+        @include media(480px) {
+            width: 80%;
+        }
+
         &__header {
             display: flex;
             justify-content: space-between;
@@ -76,6 +83,16 @@ export default {
                 width: 95%;
                 text-align: center;
                 font-size: 34px;
+
+                @include media(880px) {
+                    font-size: 26px;
+                }
+                @include media(680px) {
+                    font-size: 20px;
+                }
+                @include media(480px) {
+                    font-size: 24px;
+                }
             }
         }
 
@@ -105,10 +122,42 @@ export default {
                 font-size: 22px;
                 padding: 10px;
                 outline: none;
+
+                @include media(880px) {
+                    margin: 5px auto;
+                    font-size: 14px;
+                    padding: 7px;
+                }
             }
 
             button {
                 width: 84%;
+                @include media(880px) {
+                    padding: 10px;
+                }
+            }
+
+            input,
+            button {
+                @include media(680px) {
+                    font-size: 10px;
+                    padding: 5px;
+                }
+                @include media(480px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        span {
+            @include media(880px) {
+                font-size: 10px;
+            }
+            @include media(680px) {
+                font-size: 6px;
+            }
+            @include media(480px) {
+                font-size: 14px;
             }
         }
 
