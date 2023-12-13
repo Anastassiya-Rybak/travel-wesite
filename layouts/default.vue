@@ -24,17 +24,17 @@
             </section>
             <section class="header__white-back-wrapper">
                 <div class="header__white-back wrapper">
-                    <div class="header__logo"><a href=""><img src="/images/logo.webp" alt="Lime Trip"></a></div>
+                    <div class="header__logo"><nuxtLink to="/"><img src="/images/logo.webp" alt="Lime Trip"></nuxtLink></div>
                     <div class="header__burger-wrapper">
                         <h3 class="header__burger" @click.prevent="openPopup('burger')">МЕНЮ</h3>
                         <BurgerContent v-show="open.burger" />
                     </div>
                     <ul class="header__nav">
-                        <nuxt-link to="">Главная</nuxt-link>
-                        <nuxt-link to="" @click.prevent="openPopup('destinations')">О направлениях</nuxt-link>
-                        <nuxt-link to="">Блоги</nuxt-link>
-                        <nuxt-link to="">Контакты</nuxt-link>
-                        <nuxt-link to="">Новости</nuxt-link>
+                        <nuxt-link active-class="active-page" to="/">Главная</nuxt-link>
+                        <nuxt-link active-class="active-page" to="" @click.prevent="openPopup('destinations')">О направлениях</nuxt-link>
+                        <nuxt-link active-class="active-page" to="">Блоги</nuxt-link>
+                        <nuxt-link active-class="active-page" to="">Контакты</nuxt-link>
+                        <nuxt-link active-class="active-page" to="">Новости</nuxt-link>
                     </ul>
                     <div class="header__conaction-links">
                         <div class="header__search">
@@ -53,7 +53,7 @@
         </header>
         <ModalWindow v-show="open.modal" type="usersProfile" @close-modal="open.modal = false" />
         <slot />
-        <div class="email-form-wrapper">
+        <section class="email-form-wrapper">
             <div class="email-form wrapper">
                 <div class="email-form__text">
                     <h4>Мы постоянно мониторим лучшие акции для своих клиентов!</h4>
@@ -65,7 +65,7 @@
                 </form>
             </div>
             <hr>
-        </div>
+        </section>
         <footer class="footer wrapper">
             <div class="footer__contact">
                 <div><img src="/images/logo.webp" alt="LimeTrip"></div>
@@ -328,6 +328,11 @@ export default {
                 &:hover {
                     @include link-hover;
                 }
+            }
+
+            .active-page {
+                @include link-hover;
+                letter-spacing: 0.1em;
             }
         }
 

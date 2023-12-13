@@ -1,19 +1,19 @@
 <template>
     <section class="modal-window-wrapper" @click="$emit('close-modal')">
-        <div class="modal-window">
+        <div class="modal-window" @click.stop>
             <div class="modal-window__header">
                 <h3 v-show="type === 'usersProfile'">Вход в аккаунт</h3>
                 <h3 v-show="type === 'feedback'">Информация для связи</h3>
-                <button class="modal-window__close-btn" @click="$emit('close-modal')">
+                <button class="modal-window__close-btn" ref="close" @click="$emit('close-modal')">
                     <img src="/images/icons/cross.svg" alt="Закрыть">
                 </button>
             </div>
-            <form class="modal-window__user-form" v-show="type === 'usersProfile'" action="" @click.stop method="POST">
+            <form class="modal-window__user-form" v-show="type === 'usersProfile'" action="" method="POST">
                 <input type="email" name="user-email" id="user-email" placeholder="Введите Ваш email">
                 <input type="password" name="user-pass" id="user-pass" placeholder="Введите пароль">
-                <button class="btn">Войти</button>
+                <button class="btn" @click.prevent="redirectToProfile">Войти</button>
             </form>
-            <form class="modal-window__feedback-form" v-show="type === 'feedback'" action="" @click.stop method="POST">
+            <form class="modal-window__feedback-form" v-show="type === 'feedback'" action="" method="POST">
                 <input type="text" name="name" id="user-name" placeholder="Как Вас зовут?">
                 <input type="number" name="tell" id="user-number"  placeholder="Укажите номер для связи">
                 <button class="btn">Свяжитесь со мной</button>
@@ -32,7 +32,13 @@ export default {
             required: true,
             default: ''
         }
-    }
+    },
+    methods: {
+        redirectToProfile() {
+            this.$refs.close.click();
+            this.$router.push('/profile');
+        },
+    },
 }
 </script>
 
@@ -158,6 +164,16 @@ export default {
             }
             @include media(480px) {
                 font-size: 14px;
+            }
+
+            a {
+                color: rgb(10, 93, 189);
+                text-decoration: underline;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
             }
         }
 
