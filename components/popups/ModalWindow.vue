@@ -11,12 +11,12 @@
             <form class="modal-window__user-form" v-show="type === 'usersProfile'" action="" method="POST">
                 <input type="email" name="user-email" id="user-email" placeholder="Введите Ваш email">
                 <input type="password" name="user-pass" id="user-pass" placeholder="Введите пароль">
-                <button class="btn" @click.prevent="redirectToProfile">Войти</button>
+                <TheButton text="Войти" @click.prevent="redirectToProfile"/>
             </form>
             <form class="modal-window__feedback-form" v-show="type === 'feedback'" action="" method="POST">
                 <input type="text" name="name" id="user-name" placeholder="Как Вас зовут?">
                 <input type="number" name="tell" id="user-number"  placeholder="Укажите номер для связи">
-                <button class="btn">Свяжитесь со мной</button>
+                <TheButton text="Свяжитесь со мной" />
             </form>
             <span v-show="type === 'usersProfile'">Вы забыли пароль? <nuxtLink to="">Восстановить</nuxtLink></span>
             <span v-show="type === 'usersProfile'">Нет аккаунта? <nuxtLink to="">Зарегистрироваться</nuxtLink></span>
@@ -25,7 +25,9 @@
 </template>
 
 <script>
+import TheButton from '../TheButton.vue';
 export default {
+    components: { TheButton },
     props: {
         type: {
             type: String,

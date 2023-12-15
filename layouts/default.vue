@@ -61,7 +61,7 @@
                 </div>
                 <form action="" method="POST">
                     <input type="email" name="" id="mainemail" placeholder="Введите свой Email">
-                    <button type="submit" class="btn">ПОДПИСАТЬСЯ</button>
+                    <TheButton type="submit" text="ПОДПИСАТЬСЯ" />
                 </form>
             </div>
             <hr>
@@ -113,9 +113,10 @@
 import TheDistanations from '~/components/popups/TheDistanations.vue';
 import BurgerContent from '~/components/popups/BurgerContent.vue';
 import ModalWindow from '~/components/popups/ModalWindow.vue';
+import TheButton from '~/components/TheButton.vue';
 
 export default {
-    components: { TheDistanations, BurgerContent, ModalWindow },
+    components: { TheDistanations, BurgerContent, ModalWindow, TheButton },
     data() {
         return {
             open: {

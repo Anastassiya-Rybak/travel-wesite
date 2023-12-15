@@ -24,9 +24,7 @@
                     <p> 
                         Мы всегда ждём Вашего звонка и готовы позвонить сами в любое удобное Вам время.
                     </p>
-                    <button class="btn" id="btn-feedback-window" @click.prevent="openPopup">
-                        Свяжитесь со мной
-                    </button>
+                    <TheButton text="Свяжитесь со мной" @click.prevent="openPopup"/>
                 </div>
             </div>
         </section>
@@ -38,8 +36,9 @@
 import BunnerSlider from '~/components/sliders/BunnerSlider.vue';
 import PopularDestinations from '~/components/sliders/PopularDestinations.vue';
 import ModalWindow from '~/components/popups/ModalWindow.vue';
+import TheButton from '~/components/TheButton.vue';
 export default {
-    components: { BunnerSlider, PopularDestinations, ModalWindow },
+    components: { BunnerSlider, PopularDestinations, ModalWindow, TheButton },
     data() {
         return {
             modal: false
