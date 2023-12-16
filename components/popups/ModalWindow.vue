@@ -9,13 +9,13 @@
                 </button>
             </div>
             <form class="modal-window__user-form" v-show="type === 'usersProfile'" action="" method="POST">
-                <input type="email" name="user-email" id="user-email" placeholder="Введите Ваш email">
-                <input type="password" name="user-pass" id="user-pass" placeholder="Введите пароль">
+                <input type="email" name="user-email" placeholder="Введите Ваш email">
+                <input type="password" name="user-pass" placeholder="Введите пароль">
                 <TheButton text="Войти" @click.prevent="redirectToProfile"/>
             </form>
             <form class="modal-window__feedback-form" v-show="type === 'feedback'" action="" method="POST">
-                <input type="text" name="name" id="user-name" placeholder="Как Вас зовут?">
-                <input type="number" name="tell" id="user-number"  placeholder="Укажите номер для связи">
+                <input type="text" name="name" placeholder="Как Вас зовут?">
+                <input type="number" name="tell" placeholder="Укажите номер для связи">
                 <TheButton text="Свяжитесь со мной" />
             </form>
             <span v-show="type === 'usersProfile'">Вы забыли пароль? <nuxtLink to="">Восстановить</nuxtLink></span>

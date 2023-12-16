@@ -1,5 +1,5 @@
 <template>
-    <ul class="burger__nav" :class="{open: open}">
+    <ul class="burger__nav">
         <li><nuxtLink to="/">Главная</nuxtLink></li>
         <li>
             <nuxtLink to="" @click.prevent="openPopup">О направлениях</nuxtLink>
