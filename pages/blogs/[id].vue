@@ -12,9 +12,11 @@
                         <nuxt-link to="/profile">{{ articleData.author }}</nuxt-link>
                     </address>
                 </section>
-                <p class="post__description">
-                    {{ articleData.desc }}
+                <p class="post__description" ref="postDescriprion">
+                    {{ articleData.desc.slice(0,1150) + '...' }}
                 </p>
+                <!-- <LazyTheButton v-show="articleData.desc.length > postDescription.length" -->
+                 class="post__open-btn" text="Развернуть" />
                 <div class="post__settings settings">
                     <div v-show="settingsOpen" class="settings__content" ref="settingsContent">
                         <ul>
@@ -50,15 +52,16 @@
 
 <script setup>
     import JSON from '~/server/articles.json';
-    import TheCommentForm from '~/components/popups/TheCommentForm.vue'; 
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
 
-    const { id } = useRoute().params;
-    const articleData = JSON.articles[id-1];
-    const settingsOpen = ref(false);
-    const imageRefs = ref([]);
-    const settingsContent = ref(null);
+    const { id } = useRoute().params;  //Получаю id из params.
+    const articleData = JSON.articles[id-1]; //Получаю данные конккретной статьи из бд статей по id.
+    const settingsOpen = ref(false); //Объявляю переменную для контроля видимости настроект поста.
+    const imageRefs = ref([]); // ?
+    const settingsContent = ref(null); // Объявляю ссылку с такимже именем как ref нужного элемента DOM.
+    const postDescription = ref(null); // ?
 
+    // Функуия для анимационного открытия и закрытия меню настроек поста, путем удаления и добавления классов.
     const openSettings = () => {
         switch (settingsOpen.value) {
             case true:
@@ -76,8 +79,13 @@
             default:
                 break;
         }
-
     }
+
+    onMounted(() => {
+        settingsContent.value.classList.add('settings__content_close'); // Необходимо для корректной работы анимации появления настроек с первого клика.
+    })
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -150,7 +158,7 @@
             width: calc(55% - 2%);
             border-radius: 10px;
             background-color: #fcfcfc;
-            padding: 15px 15px 50px 15px;
+            padding: 15px;
 
             header h1 {
                 color: $accent;
@@ -185,13 +193,14 @@
         }
 
         &__description {
-            overflow: hidden;
-            max-height: 40vh;
             font-size: 14px;
             text-align: justify;
             letter-spacing: 0.07em;
             line-height: 1.5em;
-            padding: 1em 0 0;
+        }
+
+        &__open-btn {
+            font-size: 10px;
         }
 
         &__images {
