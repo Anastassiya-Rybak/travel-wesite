@@ -7,29 +7,7 @@
                     <TheButton class="authors-post__btn-new-post" text="Новый пост" />
                 </div>
                 <div class="authors-posts__list">
-                    <article class="authors-posts__post post"
-                    v-for="userPost in userData.posts" :key="userPost">
-                        <div class="post__img">
-                            <img :src="'/images/posts/' + userPost.img" :alt="userPost.title">
-                        </div>
-                        <div class="post__title">
-                            <h2>{{ userPost.title }}</h2>
-                        </div>
-                        <ul class="post__data">
-                            <li>
-                                <div class="post__icons"><img src="/images/icons/date.svg" alt="Дата публикации"></div>
-                                {{ userPost.data.publishedAt }}
-                            </li>
-                            <li>
-                                <div class="post__icons"><img src="/images/icons/save.svg" alt="Лайки"></div>
-                                {{ userPost.data.likes }}
-                            </li>
-                            <li>
-                                <div class="post__icons"><img src="/images/icons/comment.svg" alt="Коментарии"></div>
-                                {{ userPost.data.comments.length }}
-                            </li>
-                        </ul>
-                    </article>
+                    <TheArticleCard v-for="userPost in userData.posts" :key="userPost" :articleData="userPost"/>
                 </div>
             </div>
             <div v-show="!editUserProfileInfo" class="user-profile__bio bio">
@@ -62,9 +40,10 @@
 <script>
     import JSON from '~/server/posts.json';
     import TheButton from '~/components/TheButton.vue';
+    import TheArticleCard from '~/components/TheArticleCard.vue';
 
     export default {
-        components: { TheButton },
+        components: { TheButton, TheArticleCard },
         data() {
             return {
                 dotsOpen: false,
@@ -127,70 +106,6 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
                 padding: 2vh 0;
-            }
-
-            &__post {
-                overflow: hidden;
-                border-radius: 10px;
-                background-color: #fcfcfc;
-                width: calc(33% - 2%);
-                height: fit-content;
-                padding-bottom: 10px;
-                cursor: pointer;
-                box-shadow: 0px 3px 5px #00000071;
-
-                &:hover .post__img img {
-                    transform: scale(1.2);
-                }
-
-                &:hover {
-                    opacity: 0.8;
-                }
-                .post {
-                    &__img {
-                        overflow: hidden;
-                        max-height: 140px;
-                        width: 100%;
-
-                        img {
-                            transition: all 0.5s;
-                            object-fit: cover;
-                        }
-                    }
-
-                    &__title {
-                        width: 98%;
-                        margin: 10px;
-                        
-                        h2{
-                            font-size: 18px;
-                            font-weight: 600;
-                            color: $accent;
-                            text-shadow: 1px 2px 2px #6a6a6a;
-                            letter-spacing: 0.1em;
-                            text-transform: uppercase;
-                        }
-                    }
-
-                    &__data {
-                        display: flex;
-                        justify-content: space-around;
-                        background-color: #c8fb101e;
-                        padding: 5px 0;
-                        box-shadow: 0px 1px 5px #0000001a;
-
-                        li {
-                            display: flex;
-                            align-items: center;
-                            gap: 5px;
-
-                            .post__icons {
-                                width: 20px;
-                                padding-top: 3px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
