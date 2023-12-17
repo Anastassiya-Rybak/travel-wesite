@@ -26,7 +26,7 @@ export default {
         text-transform: uppercase;
         font-weight: 400;
         letter-spacing: 0.2em;
-        padding: 1.3em;
+        padding: 1.1em;
         cursor: pointer;
 
         &:hover {

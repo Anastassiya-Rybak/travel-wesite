@@ -12,11 +12,12 @@
                         <nuxt-link to="/profile">{{ articleData.author }}</nuxt-link>
                     </address>
                 </section>
-                <p class="post__description" ref="postDescriprion">
+                <p class="post__description" ref="postDescription">
                     {{ articleData.desc.slice(0,1150) + '...' }}
                 </p>
-                <!-- <LazyTheButton v-show="articleData.desc.length > postDescription.length" -->
-                 class="post__open-btn" text="Развернуть" />
+                <LazyTheButton v-show="postDescriptionOverfull" :class="{'post__open-btn_dimmer': postOpenFull}"
+                 class="post__open-btn" :text="postOpenFull ? 'Свернуть' : 'Развернуть'"
+                 @click.prevent="editPostLength(postOpenFull ? 'cut' : 'full')"/>
                 <div class="post__settings settings">
                     <div v-show="settingsOpen" class="settings__content" ref="settingsContent">
                         <ul>
@@ -56,11 +57,9 @@
 
     const { id } = useRoute().params;  //Получаю id из params.
     const articleData = JSON.articles[id-1]; //Получаю данные конккретной статьи из бд статей по id.
-    const settingsOpen = ref(false); //Объявляю переменную для контроля видимости настроект поста.
-    const imageRefs = ref([]); // ?
-    const settingsContent = ref(null); // Объявляю ссылку с такимже именем как ref нужного элемента DOM.
-    const postDescription = ref(null); // ?
 
+    const settingsOpen = ref(false); //Объявляю переменную для контроля видимости настроект поста.
+    const settingsContent = ref(null); // Объявляю ссылку с такимже именем как ref нужного элемента DOM.
     // Функуия для анимационного открытия и закрытия меню настроек поста, путем удаления и добавления классов.
     const openSettings = () => {
         switch (settingsOpen.value) {
@@ -81,10 +80,31 @@
         }
     }
 
+    const postDescription = ref(null); // Объявляю ссылку с такимже именем как ref нужного элемента DOM.
+    const postDescriptionOverfull = ref(false); // Объявляю переменную для контроля отображения кнопки при переполненном описании статьи.
+    const postOpenFull = ref(false); // Переменная для отслеживания развернут ли пост пользователем.
+
     onMounted(() => {
         settingsContent.value.classList.add('settings__content_close'); // Необходимо для корректной работы анимации появления настроек с первого клика.
+
+        articleData.desc.length > 1150 ? postDescriptionOverfull.value = true : postDescriptionOverfull.value = false; // При рендеренге определяю нужно ли отображать кнопку развертывания статьи.
     })
 
+    const editPostLength = (arg) => {
+        if ( arg === 'full' || arg === 'cut' ) {
+            switch (arg) {
+                case 'full':
+                postDescription.value.innerText = articleData.desc;
+                    break;
+                case 'cut':
+                postDescription.value.innerText = articleData.desc.slice(0,1150) + '...';
+                    break;
+                default:
+                    break;
+            }
+            postOpenFull.value = !postOpenFull.value;
+        } else { console.log('Invalid argument has been used'); }
+    }
 
 </script>
 
@@ -108,15 +128,21 @@
             .settings {
                 &__content {
                     position: absolute;
-                    left: -240%;
+                    right: -240%;
                     bottom: 0;
                     overflow: hidden;
 
                     ul {
                         position: relative;
                         width: 125px;
-                        height: 40px;
-                        transition: left 0.4s ease;
+                        height: 47px;
+                        transition: right 0.4s ease;
+                        backdrop-filter: blur(3px);
+                        border: 0.3px solid $accent;
+                        border-left: none;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        padding: 7px;
 
                         li {
                             font-size: 14px;
@@ -130,11 +156,11 @@
                 }
 
                 &__content_open ul {
-                    left: 0;
+                    right: 0;
                 }
 
                 &__content_close ul {
-                    left: 100%;
+                    right: 100%;
                 }
 
                 &__img {
@@ -201,6 +227,10 @@
 
         &__open-btn {
             font-size: 10px;
+
+            &_dimmer {
+                opacity: 0.5;
+            }
         }
 
         &__images {
