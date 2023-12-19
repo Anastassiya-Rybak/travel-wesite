@@ -1,5 +1,6 @@
 <template>
     <div class="post wrapper">
+        <span class="post__back" @click="$router.push('/blogs')">ОБРАТНО</span>
         <section class="post__content">
             <article class="post__article">
                 <header>
@@ -128,6 +129,25 @@
 
 <style lang="scss" scoped>
     .post {
+        &__back {
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            background-color: $accent;
+            padding: 5px 10px;
+            border-radius: 10px;
+            box-shadow: 0 1px 1px #000;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &:active {
+                box-shadow: none ;
+            }
+        }
+
         &__content {
             display: flex;
             justify-content: space-between;
