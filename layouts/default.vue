@@ -32,7 +32,7 @@
                     <ul class="header__nav">
                         <nuxt-link active-class="active-page" to="/">Главная</nuxt-link>
                         <nuxt-link active-class="active-page" to="" @click.prevent="openPopup('destinations')">О направлениях</nuxt-link>
-                        <nuxt-link active-class="active-page" to="">Блоги</nuxt-link>
+                        <nuxt-link active-class="active-page" to="/blogs">Блоги</nuxt-link>
                         <nuxt-link active-class="active-page" to="">Контакты</nuxt-link>
                         <nuxt-link active-class="active-page" to="">Новости</nuxt-link>
                     </ul>
