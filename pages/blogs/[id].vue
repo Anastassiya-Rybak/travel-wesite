@@ -13,7 +13,7 @@
                     </address>
                 </section>
                 <p class="post__description" ref="postDescription">
-                    {{ articleData.desc.slice(0,1150) + '...' }}
+                    {{ acceptableAmountDescription }}
                 </p>
                 <LazyTheButton v-show="postDescriptionOverfull" :class="{'post__open-btn_dimmer': postOpenFull}"
                  class="post__open-btn" :text="postOpenFull ? 'Свернуть' : 'Развернуть'"
@@ -31,14 +31,16 @@
                 </div>
             </article>
             <div class="post__images images">
-                <figure v-for="image in articleData.img.slice(0, 3)" ref="imageRefs" :key="image">
+                <figure v-for="image in articleData.img.slice(0, 3)" :key="image">
                     <img :src="'/images/posts/' + image" :alt="articleData.title">
                 </figure>
-                <div class="images__link">
-                    <span>ВСЕ ФОТО</span>
-                </div>
+                <figure v-show="postImagesOverfull" class="images__link" @click="openAllImages">
+                    <figcaption>ВСЕ ФОТО</figcaption>
+                    <img :src="'/images/posts/' + articleData.img[3]" alt="Остальные фото">
+                </figure>
             </div>
         </section>
+        <LazyPopupsTheModalImages v-show="postImagesOpenFull" :imges="articleData.img" @close-modal="postImagesOpenFull = false"/>
         <!-- <section class="post__comments">
             <h2>Коментарии:</h2>
             <TheCommentForm />
@@ -60,8 +62,8 @@
 
     const settingsOpen = ref(false); //Объявляю переменную для контроля видимости настроект поста.
     const settingsContent = ref(null); // Объявляю ссылку с такимже именем как ref нужного элемента DOM.
-    // Функуия для анимационного открытия и закрытия меню настроек поста, путем удаления и добавления классов.
-    const openSettings = () => {
+    
+    const openSettings = () => { // Функуия для анимационного открытия и закрытия меню настроек поста, путем удаления и добавления классов.
         switch (settingsOpen.value) {
             case true:
                 settingsContent.value.classList.remove('settings__content_open');
@@ -84,27 +86,43 @@
     const postDescriptionOverfull = ref(false); // Объявляю переменную для контроля отображения кнопки при переполненном описании статьи.
     const postOpenFull = ref(false); // Переменная для отслеживания развернут ли пост пользователем.
 
-    onMounted(() => {
-        settingsContent.value.classList.add('settings__content_close'); // Необходимо для корректной работы анимации появления настроек с первого клика.
-
-        articleData.desc.length > 1150 ? postDescriptionOverfull.value = true : postDescriptionOverfull.value = false; // При рендеренге определяю нужно ли отображать кнопку развертывания статьи.
+    const acceptableAmountDescription = computed(() => { // Допустимый раззмер текста описания поста.
+        return articleData.desc > 2090 ? articleData.desc.slice(0,2090) : articleData.desc;
     })
 
-    const editPostLength = (arg) => {
+    const editPostLength = (arg) => { // Разворачивает/сворачивает контент статьи.
         if ( arg === 'full' || arg === 'cut' ) {
             switch (arg) {
                 case 'full':
                 postDescription.value.innerText = articleData.desc;
+                postOpenFull.value = true;
                     break;
                 case 'cut':
-                postDescription.value.innerText = articleData.desc.slice(0,1150) + '...';
+                postDescription.value.innerText = articleData.desc.slice(0,2090) + ' . . .';
+                postOpenFull.value = false;
                     break;
                 default:
                     break;
             }
-            postOpenFull.value = !postOpenFull.value;
         } else { console.log('Invalid argument has been used'); }
     }
+
+    const postImagesOverfull = ref(false); // Объявляю ссылку для ref блока изображений, сигнализирующую о том, переполнен ли блок изображений.
+    const postImagesOpenFull = ref(false); // Переменная для отслеживания развернуты ли все изображения пользователем.
+    
+    const openAllImages = () => {
+        postImagesOpenFull.value = true;
+    }
+
+
+    onMounted(() => {
+        settingsContent.value.classList.add('settings__content_close'); // Необходимо для корректной работы анимации появления настроек с первого клика.
+
+        articleData.desc.length > 2090 ? postDescriptionOverfull.value = true : postDescriptionOverfull.value = false; // При рендеренге определяю нужно ли отображать кнопку развертывания статьи.
+        if (articleData.desc.length > 2090) editPostLength('cut');
+
+        articleData.img.length > 3 ? postImagesOverfull.value = true : postImagesOverfull.value = false; // При рендеринге определяю переполнен ли блок с картинками, если да, то сообщаю в ссылку контроля.
+    })
 
 </script>
 
@@ -119,7 +137,7 @@
 
         &__settings {
             display: flex;
-            align-items:end;
+            align-items: flex-end;
             cursor: pointer;
             position: absolute;
             right: 0;
@@ -165,7 +183,7 @@
 
                 &__img {
                     display: flex;
-                    align-items:end;
+                    align-items: flex-end;
                     transition: all 0.4s;
                     width: 100%;
 
@@ -239,16 +257,51 @@
             justify-content: space-between;
             width: 45%;
             border-radius: 10px;
+            gap: 5px;
             overflow: hidden;
 
-            &:first-child {
-                width: 100%;
-            }
+            figure {
+                overflow: hidden;
+                img {
+                    object-fit: cover;
+                }
 
-            figure:not(:first-child),
-            .images__link{
-                width: calc(33% - 1%);
-            }
+                &:first-child {
+                    width: 100%;
+                    max-height: 38vh;
+                }
+
+                &:not(:first-child) {
+                    width: calc(50% - 5px);
+                    max-height: 21vh;
+                }
+
+                &:last-child {
+                    position: relative;
+                    width: 100%;
+                    max-height: 15vh;
+                    cursor: pointer;
+
+                    &:hover img{
+                        @include img-hover;
+                    }
+
+                    figcaption {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 2;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fcfcfc5b;
+                        backdrop-filter: blur(3px);
+                    }
+                }
+            } 
+
         }
 
         // &__comments {

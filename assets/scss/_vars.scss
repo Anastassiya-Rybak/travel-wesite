@@ -17,3 +17,7 @@ $accent: #b3e00f;
   }
 }
 
+@mixin img-hover {
+  transition: all 0.4s ease;
+  transform: scale(1.1);
+}

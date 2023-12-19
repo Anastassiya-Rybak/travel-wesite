@@ -3,9 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p, span, a, li {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -33,5 +30,17 @@ li {
     @include media(1440px) {
         width: 90%;
     }
+}
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
