@@ -18,7 +18,7 @@
                 <LazyTheButton v-show="postDescriptionOverfull" :class="{'post__open-btn_dimmer': postOpenFull}"
                  class="post__open-btn" :text="postOpenFull ? 'Свернуть' : 'Развернуть'"
                  @click.prevent="editPostLength(postOpenFull ? 'cut' : 'full')"/>
-                <div class="post__settings settings">
+                <div v-show="articleData.author === 'Анастаfeffebссия'" class="post__settings settings">
                     <div v-show="settingsOpen" class="settings__content" ref="settingsContent">
                         <ul>
                             <li>Редактировать</li>
@@ -281,17 +281,18 @@
                     width: 100%;
                     max-height: 15vh;
                     cursor: pointer;
+                    transition: all 0.4s;
 
                     &:hover img{
                         @include img-hover;
                     }
 
                     figcaption {
+                        transition: all 0.4s;
                         position: absolute;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        z-index: 2;
                         top: 0;
                         left: 0;
                         width: 100%;

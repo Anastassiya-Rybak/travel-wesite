@@ -1,10 +1,11 @@
 <template>
-    <div class="modal-wrapper" @click="$emit('close-modal')">
+    <div class="modal-wrapper" @click="$emit('close-modal'), closeFocus">
         <div class="modal" @click.stop>
             <figure class="modal__all" v-show="!openFocus" v-for="(image, idx) in imges" :key="idx" @click="openOneImage(idx)">
                 <img :src="'/images/posts/' + image" :alt="image">
             </figure>
             <figure v-show="openFocus" class="modal__focus">
+                <span @click="closeFocus">ОБРАТНО</span>
                 <img :src="'/images/posts/' + imges[focusImg]" alt="">
             </figure>
         </div>
@@ -27,6 +28,10 @@
     const openOneImage = (idx) => {
         focusImg.value = idx;
         openFocus.value = true;
+    }
+
+    const closeFocus = () => {
+        openFocus.value = false;
     }
 </script>
 
@@ -69,6 +74,26 @@
 
         &__focus {
             width: 100% !important;
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 5%;
+                top: 5%;
+                background-color: $accent;
+                padding: 5px 10px;
+                border-radius: 10px;
+                box-shadow: 0 1px 1px #000;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                &:active {
+                    box-shadow: none ;
+                }
+            }
         }
     }
 </style>
