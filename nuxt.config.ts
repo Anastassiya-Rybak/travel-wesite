@@ -14,12 +14,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['nuxt-swiper'],
-  swiper: {
-    // Swiper options
-    //----------------------
-    // prefix: 'Swiper',
-    // styleLang: 'css',
-    // modules: ['navigation', 'pagination'], // all modules are imported by default
-  }
+  modules: [
+    'nuxt-swiper'
+  ],
+  // runtimeConfig: {
+  //   newsApi: 'NEWS_API'
+  // }
 })
