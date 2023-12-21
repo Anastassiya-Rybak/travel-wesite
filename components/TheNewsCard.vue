@@ -50,7 +50,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-
 .news-item {
     display: flex;
     justify-content: space-between;
@@ -60,6 +59,11 @@ const props = defineProps({
     border-radius: 10px;
     background-color: #fcfcfc;
     box-shadow: 0px 3px 5px #00000071;
+
+    position: relative;
+    transform: translateY(48px) scale(0.9);
+    transition: transform 0.8s, opacity 0.8s;
+    opacity: 0;
 
     &__img {
         overflow: hidden;

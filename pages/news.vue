@@ -1,33 +1,53 @@
 <template>
     <section class="news wrapper">
         <h1>Последние новости из сферы туризма</h1>
-        <div class="news__content">
-            <div class="news__main">
-                <h3>Главные</h3>
-                <TheNewsCard v-for="article in Array.from(articles.articles).filter(el => el.title !== '[Removed]')" :key="article"
-                :title="article.title" :desc="article.description" :url="article.url"
-                :image="article.urlToImage === null ? '/images/Global-News-APIs-800x420.jpg' : article.urlToImage" :date="article.publishedAt" />
-            </div>
-            <div class="news__newest">
-                <h3>Последние</h3>
-                <TheNewsCard v-for="article in Array.from(newestArticles.articles).filter(el => el.title !== '[Removed]')" :key="article"
-                :title="article.title" :desc="article.description" :url="article.url"
-                :image="article.urlToImage === null ? '/images/Global-News-APIs-800x420.jpg' : article.urlToImage" :date="article.publishedAt" />
-            </div>
+        <div v-cloak class="news__content">
+            <TheMainNews />
+            <TheNewestNews />
         </div>
     </section>
 </template>
 
 <script setup>
 
-    const { data: articles } = await useFetch(() => 'https://newsapi.org/v2/top-headlines?country=us&apiKey=343ec09004b243529cc28f976c15f840')
-
-    const newest = await useFetch(() => 'https://newsapi.org/v2/everything?q=everything&from=2023-12-20&to=2022-11-03&sortBy=publishedAt&apiKey=343ec09004b243529cc28f976c15f840')
-
-    const newestArticles = newest.data.value;
+    //     postsObserver.observe(post)
+    // })
 </script>
 
 <style lang="scss" scoped>
+    [v-cloak] {
+        display: none;
+        padding: 50px 0;
+
+        @keyframes spinner {
+            to {
+            transform: rotate(360deg);
+            }
+        }
+
+        &:before {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            margin-left: -10px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            border-top-color: #333;
+            animation: spinner .6s linear infinite;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        & > div {
+            display: none;
+        }
+    }
     .news {
         display: flex;
         flex-direction: column;
@@ -53,6 +73,7 @@
             flex-direction: column;
             gap: 3vh;
         }
+
     }
 
 </style>

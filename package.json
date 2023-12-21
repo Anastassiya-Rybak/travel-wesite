@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "nuxt-swiper": "^1.2.2"
+    "nuxt-swiper": "^1.2.2",
+    "vue-use-infinite-scroll": "^0.0.3"
   }
 }
