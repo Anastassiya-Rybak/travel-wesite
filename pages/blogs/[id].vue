@@ -7,7 +7,7 @@
                     <h1>{{ articleData.title }}</h1>
                 </header>
                 <section class="post__data">
-                    <h5 class="post__destination">{{ articleData.data.destination }}</h5>
+                    <nuxt-link class="post__destination" :to="`/destinations/${articleData.data.destination}`">{{ articleData.data.destination }}</nuxt-link>
                     <time class="post__published-at" :datetime="articleData.data.publishedAt">{{ articleData.data.publishedAt }}</time>
                     <address class="post__author">
                         <nuxt-link to="/profile">{{ articleData.author }}</nuxt-link>
@@ -238,7 +238,7 @@
             justify-content: space-between;
             align-items: center;
 
-            h5,
+            a,
             time,
             address a {
                 font-size: 16px;
@@ -249,7 +249,7 @@
             }
 
             address a:hover,
-            h5:hover {
+            a:hover {
                 color: #000000;
                 transition: all 0.3s;
                 cursor: pointer;
