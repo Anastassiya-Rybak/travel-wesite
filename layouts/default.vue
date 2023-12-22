@@ -37,9 +37,9 @@
                         <nuxt-link active-class="active-page" to="/news">Новости</nuxt-link>
                     </ul>
                     <div class="header__conaction-links">
-                        <div class="header__search">
+                        <!-- <div class="header__search">
                             <img src="/images/icons/search.svg" alt="Поиск">
-                        </div>
+                        </div> -->
                         <div class="header__user-icon" @click.prevent="openPopup('modal')" >
                             <img src="/images/icons/user.svg" alt="Войти/Зврегистрироваться">
                         </div>
@@ -342,19 +342,19 @@ export default {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 12%;
+            width: 8%;
             @include media(1100px) {
-                width: 10%;
+                width: 6%;
             }
             @include media(560px) {
-                width: 18%;
+                width: 10%;
             }
         }
 
-        &__search,
+        // &__search,
         &__user-icon,
         &__save {
-            width: calc(18% - 3%);
+            width: calc(28% - 3%);
             cursor: pointer;
             @include media(560px) {
                 width: calc(25% - 3%);
