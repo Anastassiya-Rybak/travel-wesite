@@ -1,58 +1,17 @@
 <template>
     <section class="destination-popup">
         <ul class="destination-popup__list">
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorqfem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lordfvem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorerem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorfffem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Loream</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorbutem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorgaaem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Loreddm</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Longrem</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Loremsa</nuxtLink>
-            </li>
-            <li>
-                <nuxtLink to="" class="burger-popup">Lorem</nuxtLink>
+            <li v-for="(destination, idx) in destinations" :key="idx">
+                <nuxtLink :to="`/destinations/${destination.name}`" class="burger-popup">{{ destination.name }}</nuxtLink>
             </li>
         </ul>
     </section>
 </template>
 
-<script>
-    export default {
-    }
+<script setup>
+    import JSON from '~/server/destinations.json';
+
+    const { destinations } = JSON;
 </script>
 
 <style lang="scss">

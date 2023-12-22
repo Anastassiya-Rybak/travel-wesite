@@ -27,7 +27,7 @@
                     <div class="header__logo"><nuxtLink to="/"><img src="/images/logo.webp" alt="Lime Trip"></nuxtLink></div>
                     <div class="header__burger-wrapper">
                         <h3 class="header__burger" @click.prevent="openPopup('burger')">МЕНЮ</h3>
-                        <BurgerContent v-show="open.burger" />
+                        <LazyPopupsBurgerContent v-show="open.burger" />
                     </div>
                     <ul class="header__nav">
                         <nuxt-link active-class="active-page" to="/">Главная</nuxt-link>
@@ -49,9 +49,9 @@
                     </div>
                 </div>
             </section>
-            <TheDistanations v-show="open.destinations" />
+            <LazyTheDestinations v-show="open.destinations" />
         </header>
-        <ModalWindow v-show="open.modal" type="usersProfile" @close-modal="open.modal = false" />
+        <LazyPopupsModalWindow v-show="open.modal" type="usersProfile" @close-modal="open.modal = false" />
         <slot />
         <section class="email-form-wrapper">
             <div class="email-form wrapper">
@@ -110,13 +110,14 @@
 </template>
 
 <script>
+import TheDestinations from '~/components/TheDestinations.vue';
 import TheDistanations from '~/components/popups/TheDistanations.vue';
 import BurgerContent from '~/components/popups/BurgerContent.vue';
 import ModalWindow from '~/components/popups/ModalWindow.vue';
 import TheButton from '~/components/TheButton.vue';
 
 export default {
-    components: { TheDistanations, BurgerContent, ModalWindow, TheButton },
+    components: { TheDistanations, BurgerContent, ModalWindow, TheButton, TheDestinations },
     data() {
         return {
             open: {
