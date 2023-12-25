@@ -32,7 +32,7 @@
                 </div>
             </article>
             <div class="post__images images">
-                <figure v-for="image in articleData.img.slice(0, 3)" :key="image">
+                <figure class="images__item" v-for="image in articleData.img.slice(0, 3)" :key="image">
                     <img :src="'/images/posts/' + image" :alt="articleData.title">
                 </figure>
                 <figure v-show="postImagesOverfull" class="images__link" @click="openAllImages">
@@ -294,6 +294,11 @@
                 &:not(:first-child) {
                     width: calc(50% - 5px);
                     max-height: 21vh;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
 
                 &:last-child {

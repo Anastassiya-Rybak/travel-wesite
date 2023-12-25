@@ -49,6 +49,18 @@
         justify-content: space-evenly;
         border-radius: 10px;
         gap: 5px;
+        box-shadow: 2px 1px 20px #00000041;
+
+        &::-webkit-scrollbar {
+            width: 20px;
+            background-color: #9c9c9c25;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $accent;
+        }
 
         &__all {
             overflow: hidden;
