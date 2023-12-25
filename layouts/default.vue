@@ -31,7 +31,7 @@
                     </div>
                     <ul class="header__nav">
                         <nuxt-link active-class="active-page" to="/">Главная</nuxt-link>
-                        <nuxt-link active-class="active-page" to="" @click.prevent="openPopup('destinations')">О направлениях</nuxt-link>
+                        <nuxt-link active-class="active-page" class="destinations" to="" @click.prevent="openPopup('destinations')">О направлениях</nuxt-link>
                         <nuxt-link active-class="active-page" to="/blogs">Блоги</nuxt-link>
                         <nuxt-link active-class="active-page" to="/contacts">Контакты</nuxt-link>
                         <nuxt-link active-class="active-page" to="/news">Новости</nuxt-link>
@@ -127,12 +127,22 @@ export default {
             }
         }
     },
+    mounted() {
+        document.addEventListener('click', this.handleClickOutside);
+    },
     methods: {
         openPopup(dir){
             this.open[dir] === true ? this.open[dir] = false : this.open[dir] = true;
-        }
-    }
-           
+        },
+        handleClickOutside(event) {
+            if ( this.open.destinations && !event.target.classList.contains('destinations') ) {
+                this.open.destinations = !this.open.destinations;
+            }
+        },
+    },
+    beforeDestroy() {
+        document.removeEventListener('click', this.handleClickOutside);
+    }  
 }
 </script>
 
