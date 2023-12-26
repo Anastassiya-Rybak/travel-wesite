@@ -10,7 +10,8 @@
             <p class="destination__description">{{ currentDestination.description }}</p>
             <footer>
                 <p>
-                    <nuxt-link :to="`/blogs/${currentDestination.name}`">ТУТ</nuxt-link> Вы можете почитать исотрии туристов уже путешествовавших по этому направлению.
+                    <nuxt-link to="/blogs">ТУТ</nuxt-link> Вы можете почитать исотрии туристов уже путешествовавших по этому направлению.
+                    <!-- <nuxt-link :to="`/blogs/${currentDestination.name}`">ТУТ</nuxt-link> Вы можете почитать исотрии туристов уже путешествовавших по этому направлению. -->
                 </p>
             </footer>
         </article>
