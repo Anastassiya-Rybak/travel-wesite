@@ -1,0 +1,1 @@
+import{_ as e}from"./entry.8a9c63d7.js";import{o,E as _,G as n}from"./swiper-vue.5803c9e7.js";const s={props:{text:{type:String,required:!0,default:""}}},c={class:"btn"};function r(a,p,t,d,u,i){return o(),_("button",c,n(t.text),1)}const m=e(s,[["render",r],["__scopeId","data-v-4dc481be"]]);export{m as default};
